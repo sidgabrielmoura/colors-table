@@ -1,7 +1,6 @@
 'use client'
 import '../../app/globals.css'
 import { toast } from "sonner"
-import { CiSquareCheck } from "react-icons/ci";
 
 type CardsProps = {
     hexadecimalFrom: string,
@@ -25,15 +24,23 @@ hexadecimal1bg, hexadecimal2bg, hexadecimal3bg }: CardsProps) {
         navigator.clipboard.writeText(hex)
     }
 
-    const check = <CiSquareCheck/>
-
     return(
         <>
-            <div className="w-[280px] h-[150px] flex items-center justify-center">
-                <div className='w-[250px] h-[150px] rounded-[10px] border-2 border-zinc-500 border-dashed relative
-                hover:w-full transition-all duration-300 cursor-pointer' id='cardContainer'>
+            <div className="flex items-center justify-center
+            lg:w-[280px] lg:h-[150px]
+            md:w-[250px] md:h-[150px]
+            min-[320px]:w-[70vw] min-[320px]:h-[100px]">
+
+                <div className='rounded-[10px] border-2 border-zinc-500 border-dashed relative
+                hover:w-full transition-all duration-300 cursor-pointer
+                lg:w-[250px] lg:h-[150px]
+                md:w-[250px] md:h-[150px]
+                min-[320px]:w-[70vw] min-[320px]:h-[100px]' id='cardContainer'>
+                    
                     <div className={`w-full h-full bg-gradient-to-r ${hexadecimalFrom} ${hexadecimalVia} ${hexadecimalTo} rounded-[10px]
-                    transition-opacity duration-500 absolute`} id='cardImage'/>
+                    transition-opacity duration-500 absolute
+                    min-[1250px]:block
+                    min-[320px]:hidden`} id='cardImage'/>
                     
                     <div className='w-full h-full flex rounded-[10px]'>
                         
@@ -48,7 +55,10 @@ hexadecimal1bg, hexadecimal2bg, hexadecimal3bg }: CardsProps) {
                             }})
                         }}>
 
-                            <span>{hexadecimal1}</span>
+                            <span className='
+                            lg:text-[15px]
+                            md:text-[12px]
+                            min-[320px]:text-[12px]'>{hexadecimal1}</span>
                         </button>
 
                         <button className={hexadecimal2bg ? `h-full ${hexadecimal2bg} w-full ${corTexto2} flex justify-center items-center font-bold
@@ -62,7 +72,10 @@ hexadecimal1bg, hexadecimal2bg, hexadecimal3bg }: CardsProps) {
                             }})
                         }}>
 
-                            <span>{hexadecimal2}</span>
+                            <span className='
+                            lg:text-[15px]
+                            md:text-[12px]
+                            min-[320px]:text-[12px]'>{hexadecimal2}</span>
                         </button>
 
                         <button className={`h-full ${hexadecimal3bg} w-full rounded-e-[10px] ${corTexto3} flex justify-center items-center font-bold
@@ -76,7 +89,10 @@ hexadecimal1bg, hexadecimal2bg, hexadecimal3bg }: CardsProps) {
                             }})
                         }}>
 
-                            <span>{hexadecimal3}</span>
+                            <span className='
+                            lg:text-[15px]
+                            md:text-[12px]
+                            min-[320px]:text-[12px]'>{hexadecimal3}</span>
                         </button>
                     </div>
                 </div>
